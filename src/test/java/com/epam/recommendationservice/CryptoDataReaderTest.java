@@ -67,7 +67,7 @@ public class CryptoDataReaderTest {
 
     @Test
     public void testInvalidData() throws IOException {
-        File file = new File(tempDir.toFile(), "test");
+        File file = new File(tempDir.toFile(), "test.wrong");
         FileWriter writer = new FileWriter(file);
         writer.write("timestamp,symbol,price\n");
         writer.write("1,btc\n"); // invalid line format, should have 3 fields
