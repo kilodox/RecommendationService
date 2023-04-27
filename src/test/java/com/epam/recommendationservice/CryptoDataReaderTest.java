@@ -66,11 +66,11 @@ public class CryptoDataReaderTest {
     }
 
     @Test
-    public void testInvalidData() throws IOException {
+    public void testInvalidFile() throws IOException {
         File file = new File(tempDir.toFile(), "test.wrong");
         FileWriter writer = new FileWriter(file);
         writer.write("timestamp,symbol,price\n");
-        writer.write("1,btc\n"); // invalid line format, should have 3 fields
+        writer.write("1,btc,12000\n");
         writer.write("2,btc,12000.0\n");
         writer.close();
 
